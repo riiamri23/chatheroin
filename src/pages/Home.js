@@ -37,7 +37,7 @@ const Home = () => {
         setLoading(true);
         const options = {
             headers: {
-                Authorization: `Bearer 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`,
+                Authorization: `Bearer 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`,
                 'Content-Type': 'application/json',
             },
         };
@@ -63,6 +63,8 @@ const Home = () => {
         } catch (error) {
             setLoading(false);
             setError(error.response.data.error.message);
+
+            setAllConversation(prevState=>[...prevState, {'order': order, 'value': error.response.data.error.message, 'chatBy': 'bot', date: new Date()}]);
             setShowError(true);
             console.log(error.response);
         }
@@ -73,7 +75,7 @@ const Home = () => {
     return(
     <div className="flex flex-col items-center justify-center w-screen min-h-screen bg-gray-100 text-gray-800 p-10">
 
-        {showError && <div id="menu" className="w-full h-full bg-gray-900 bg-opacity-80 top-0 fixed sticky-0 ">
+        {/* {showError && <div id="menu" className="w-full h-full bg-gray-900 bg-opacity-80 top-0 fixed sticky-0 ">
             <div className="2xl:container  2xl:mx-auto py-48 px-4 md:px-28 flex justify-center items-center">
                 <div className="w-96 md:w-auto dark:bg-gray-800 relative flex flex-col justify-center items-center bg-white py-16 px-4 md:px-24 xl:py-24 xl:px-36">
                     <div role="banner">
@@ -128,7 +130,7 @@ const Home = () => {
                     </button>
                 </div>
             </div>
-        </div>}
+        </div>} */}
 
         <div className="flex flex-col flex-grow w-full max-w-xl bg-white shadow-xl rounded-lg overflow-hidden">
             <div className="bg-blue-500 w-full h-14 p-2 flex justify-between space-x-2">
