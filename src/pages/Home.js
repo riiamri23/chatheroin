@@ -37,7 +37,7 @@ const Home = () => {
         setLoading(true);
         const options = {
             headers: {
-                Authorization: `Bearer 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`,
+                Authorization: `Bearer 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`,
                 'Content-Type': 'application/json',
             },
         };
