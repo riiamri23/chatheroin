@@ -1,11 +1,11 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import axios from 'axios';
 
 const Home = () => {
 
     const [loading, setLoading] = useState(false);
-    const [showError, setShowError] = useState(false);
-    const [error, setError] = useState('');
+    // const [showError, setShowError] = useState(false);
+    // const [error, setError] = useState('');
 
 
     // Values for Prompt
@@ -62,10 +62,11 @@ const Home = () => {
             setLoading(false);
         } catch (error) {
             setLoading(false);
-            setError(error.response.data.error.message);
+            // setError(error.response.data.error.message);
 
             setAllConversation(prevState=>[...prevState, {'order': order, 'value': error.response.data.error.message, 'chatBy': 'bot', date: new Date()}]);
-            setShowError(true);
+
+            // setShowError(true);
             console.log(error.response);
         }
     };
