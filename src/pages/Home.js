@@ -86,6 +86,7 @@ const Home = () => {
     useEffect(()=>{
         const setting = JSON.parse(localStorage.getItem('setting'));
         // console.log(setting);
+        
         if(setting){
             setValueSetting(setting);
         }
